@@ -1,0 +1,10 @@
+@import "_elements";
+@import "_mixins";
+
+.nav {
+  width: 100vw;
+  height: 20rem;
+  background-color: aqua;
+  position: fixed;
+  bottom: 0;
+}
