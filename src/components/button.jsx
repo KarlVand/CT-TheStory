@@ -1,7 +1,18 @@
 import "../scss/_mixins.scss";
+import PropTypes from "prop-types";
 
-function Button() {
-  return <button className="menuBtn">BARB</button>;
-}
+const Button = ({ label, onClick }) => {
+  return (
+    <button
+      className="menuBtn"
+      onClick={onClick}>
+      {label}
+    </button>
+  );
+};
 
+Button.propTypes = {
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
 export default Button;

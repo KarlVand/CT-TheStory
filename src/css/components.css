@@ -1,5 +1,6 @@
 .menuBtn {
   width: 100%;
+  border: 2px solid blue;
 }
 
 .nav {

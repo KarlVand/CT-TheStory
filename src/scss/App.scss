@@ -1,0 +1,6 @@
+@import "_mixins";
+
+#root {
+  @include display;
+  width: 100%;
+}

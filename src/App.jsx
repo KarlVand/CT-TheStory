@@ -1,8 +1,12 @@
 import "./css/App.css";
-import Navigation from "./components/navigation";
+import Navigation from "./components/navigation.jsx";
 
 function App() {
-  return <Navigation />;
+  return (
+    <div>
+      <Navigation />
+    </div>
+  );
 }
 
 export default App;
