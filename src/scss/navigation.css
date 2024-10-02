@@ -1,0 +1,82 @@
+/* ----- MENU BUTTON ----- */
+/* ----- FONTS ----- */
+@font-face {
+  font-family: "Pangolin-Regular.ttf", sans-serif;
+  src: url(../assets/fonts/Pangolin-Regular.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: "ArchitectsDaughter-Regular.ttf", sans-serif;
+  src: url(../assets/fonts/ArchitectsDaughter-Regular.ttf);
+  font-display: swap;
+}
+/* ----- COLORS ----- */
+.menuBtn {
+  font-family: "Pangolin-Regular.ttf", sans-serif;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  color: #a10a0a;
+  cursor: pointer;
+}
+
+* {
+  font-family: "ArchitectsDaughter-Regular.ttf", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  display: flex;
+  overflow-x: hidden;
+}
+
+/* ----- LAYOUT ----- */
+.navbar {
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  padding-left: 5vw;
+}
+.navbar .logo {
+  position: relative;
+  display: flex;
+  bottom: 2.4rem;
+  left: -2.4rem;
+  min-width: 8rem;
+  min-height: 8rem;
+  background-color: red;
+  border-radius: 4rem;
+  cursor: pointer;
+}
+.navbar #check01 {
+  display: none;
+}
+.navbar .menu {
+  list-style: none;
+  margin-right: 35vw;
+}
+.navbar .menu li {
+  margin: 2rem;
+}
+
+input,
+ul.menu {
+  display: none;
+}
+
+#check01:checked ~ ul.menu {
+  display: flex;
+  animation: menuBar 5s ease forwards;
+}/*# sourceMappingURL=navigation.css.map */

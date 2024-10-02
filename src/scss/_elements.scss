@@ -3,11 +3,17 @@
 @import "_variables";
 
 .menuBtn {
-  font-size: 1.2rem;
+  font-family: "Pangolin-Regular.ttf", sans-serif;
+  font-size: 1.5rem;
   width: 100%;
   height: 100%;
-  padding: 0 1rem;
+  padding: 2rem;
   border: none;
   background-color: transparent;
+  color: $secondary;
   cursor: pointer;
+}
+
+.menuBtn:hover {
+  font-size: 2rem;
 }

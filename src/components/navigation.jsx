@@ -1,5 +1,6 @@
 import "../css/navigation.css";
 import Button from "./button.jsx";
+import Logo from "../assets/images/logoPlaceholder.webp";
 
 const Navigation = () => {
   const handleClick = () => {
@@ -7,9 +8,13 @@ const Navigation = () => {
   };
   return (
     <div className="navbar">
-      <img
-        src="#"
-        alt="logo"></img>
+      <button className="toggle">
+        <img
+          src={Logo}
+          alt="logo"
+          className="logo"></img>
+      </button>
+
       <ul className="menu">
         <li>
           <Button

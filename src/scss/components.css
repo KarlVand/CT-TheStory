@@ -16,15 +16,11 @@
   font-size: 1.5rem;
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding: 1rem;
   border: none;
   background-color: transparent;
   color: #a10a0a;
   cursor: pointer;
-}
-
-.menuBtn:hover {
-  font-size: 2rem;
 }
 
 .nav {
@@ -33,4 +29,4 @@
   background-color: aqua;
   position: fixed;
   bottom: 0;
-}
+}/*# sourceMappingURL=components.css.map */

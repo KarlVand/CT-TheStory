@@ -1,3 +1,15 @@
+/* ----- FONTS ----- */
+@font-face {
+  font-family: "Pangolin-Regular.ttf", sans-serif;
+  src: url(../assets/fonts/Pangolin-Regular.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: "ArchitectsDaughter-Regular.ttf", sans-serif;
+  src: url(../assets/fonts/ArchitectsDaughter-Regular.ttf);
+  font-display: swap;
+}
+/* ----- COLORS ----- */
 * {
   font-family: "ArchitectsDaughter-Regular.ttf", sans-serif;
 }
@@ -7,7 +19,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #dbac11;
   display: flex;
   overflow-x: hidden;
 }
