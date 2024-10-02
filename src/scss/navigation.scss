@@ -1,4 +1,3 @@
-@import "_elements";
 @import "index";
 
 /* ----- LAYOUT ----- */
@@ -48,14 +47,32 @@
   display: flex;
   list-style: none;
   white-space: nowrap;
-  left: 6vw;
-  bottom: 5vh;
+
+  padding: 3rem 5rem;
+  bottom: -1.8rem;
+  justify-content: space-around;
+  width: 85vw;
+  margin-left: 8rem;
   z-index: 1;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.7s ease-in-out;
-  li {
-    margin: 3rem;
+  .menuBtn {
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-decoration: none;
+    background-color: transparent;
+    color: $secondary;
+    cursor: pointer;
+  }
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
   }
 }
 
@@ -66,4 +83,8 @@
 .menu:hover {
   opacity: 1;
   visibility: visible;
+}
+.menuBtn:hover {
+  color: $primary;
+  transition: 0.3s ease-in;
 }
