@@ -1,4 +1,4 @@
-import "../scss/_mixins.scss";
+import "../scss/navigation.scss";
 import PropTypes from "prop-types";
 
 const Button = ({ label, onClick }) => {

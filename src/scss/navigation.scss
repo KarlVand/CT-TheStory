@@ -1,3 +1,8 @@
+@import "_elements";
+@import "index";
+
+/* ----- LAYOUT ----- */
+
 .navbar {
   background-color: yellowgreen;
   width: 100vw;
@@ -11,7 +16,7 @@
     list-style: none;
     display: flex;
     li {
-      margin: 0 5rem;
+      margin: 0 2rem;
     }
   }
 }

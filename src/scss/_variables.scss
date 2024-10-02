@@ -1,29 +1,13 @@
-/* ----- MENU BUTTON ----- */
 /* ----- FONTS ----- */
+
 @font-face {
   font-family: "Pangolin-Regular.ttf", sans-serif;
   src: url(../assets/fonts/Pangolin-Regular.ttf);
   font-display: swap;
 }
+
 @font-face {
   font-family: "ArchitectsDaughter-Regular.ttf", sans-serif;
   src: url(../assets/fonts/ArchitectsDaughter-Regular.ttf);
   font-display: swap;
-}
-.menuBtn {
-  font-size: 1.2rem;
-  width: 100%;
-  height: 100%;
-  padding: 0 1rem;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.nav {
-  width: 100vw;
-  height: 20rem;
-  background-color: aqua;
-  position: fixed;
-  bottom: 0;
 }
