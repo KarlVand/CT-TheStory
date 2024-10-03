@@ -1,13 +1,4 @@
-@keyframes menuBar {
-  from {
-    opacity: 0;
-    transform: translateX(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+/* ----- MENU HOVER ----- */
 
 @keyframes menuAppear {
   from {
@@ -26,5 +17,22 @@
   }
   to {
     opacity: 0;
+  }
+}
+
+/* ----- BUTTON HOVER ----- */
+
+@keyframes BtnChange {
+  0% {
+    transform: translateY(0);
+    color: $secondary;
+  }
+  80% {
+    transform: translateY(-5px);
+    color: #f4c733;
+  }
+  100% {
+    transform: translateY(0);
+    color: $primary;
   }
 }

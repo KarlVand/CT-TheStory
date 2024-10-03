@@ -70,16 +70,9 @@
     color: $secondary;
     cursor: pointer;
   }
-  span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 100%;
-  }
 }
 
-/* ----- ANIMATIONS ----- */
+/* ----- ANIMATIONS HOVER DISPLAY ----- */
 
 .toggle:hover ~ .menu {
   opacity: 1;
@@ -98,24 +91,66 @@
 }
 .menuBtn:hover {
   color: $primary;
-  transition: 0.3s ease-in;
-  transform: translateX(5px);
+  animation: BtnChange 0.5s ease-in-out forwards;
 }
 
-/* .menuBtn:nth-child(2) {
-  transition-delay: 0.3s;
+/* ----- DELAY ----- */
+
+.menuBtn:nth-child(2) {
+  transition-delay: 0.2s;
 }
 
 .menuBtn:nth-child(3) {
-  transition-delay: 0.6s;
+  transition-delay: 0.4s;
 }
 .menuBtn:nth-child(4) {
-  transition-delay: 0.9s;
+  transition-delay: 0.6s;
 }
 .menuBtn:nth-child(5) {
-  transition-delay: 1.2s;
+  transition-delay: 0.8s;
 }
 
 .menuBtn:nth-child(6) {
-  transition-delay: 1.5s;
-} */
+  transition-delay: 1s;
+}
+
+/* ----- ANIMATION SPAN SELECT ----- */
+span {
+  position: absolute;
+
+  border-radius: 8px;
+  bottom: 2.4rem;
+  left: 10rem;
+  background-color: $secondary;
+  width: 5rem;
+  height: 0.5rem;
+  transition: 1s ease;
+}
+
+.menuBtn:hover ~ span {
+  opacity: 1;
+  transition: 0.2s ease;
+}
+.menuBtn:nth-child(1):hover ~ span {
+  left: 10rem;
+}
+.menuBtn:nth-child(2):hover ~ span {
+  width: 6rem;
+  left: 25rem;
+}
+.menuBtn:nth-child(3):hover ~ span {
+  left: 40.7rem;
+  width: 6rem;
+}
+.menuBtn:nth-child(4):hover ~ span {
+  left: 56rem;
+  width: 7rem;
+}
+.menuBtn:nth-child(5):hover ~ span {
+  left: 71.5rem;
+  width: 7rem;
+}
+.menuBtn:nth-child(6):hover ~ span {
+  width: 7rem;
+  left: 87rem;
+}

@@ -1,4 +1,3 @@
-/* ----- MENU BUTTON ----- */
 /* ----- FONTS ----- */
 @font-face {
   font-family: "Pangolin-Regular.ttf", sans-serif;
@@ -11,18 +10,6 @@
   font-display: swap;
 }
 /* ----- COLORS ----- */
-.menuBtn {
-  font-family: "Pangolin-Regular.ttf", sans-serif;
-  font-size: 1.5rem;
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
-  border: none;
-  background-color: transparent;
-  color: #a10a0a;
-  cursor: pointer;
-}
-
 * {
   font-family: "ArchitectsDaughter-Regular.ttf", sans-serif;
 }
@@ -32,51 +19,193 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #dbac11;
   display: flex;
   overflow-x: hidden;
 }
 
-/* ----- LAYOUT ----- */
+/* ----- MENU HOVER ----- */
+@keyframes menuAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes menuDisappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* ----- BUTTON HOVER ----- */
+@keyframes BtnChange {
+  0% {
+    transform: translateY(0);
+    color: #a10a0a;
+  }
+  80% {
+    transform: translateY(-5px);
+    color: #f4c733;
+  }
+  100% {
+    transform: translateY(0);
+    color: #dbac11;
+  }
+}
+/* ----- LAYOUT COMPONENT ----- */
 .navbar {
   width: 100vw;
-  height: 5rem;
+  height: 10rem;
   position: fixed;
-  display: flex;
+  display: inline-block;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0) 100%);
   align-items: center;
   justify-content: space-between;
   bottom: 0;
   left: 0;
   padding-left: 5vw;
 }
-.navbar .logo {
-  position: relative;
-  display: flex;
-  bottom: 2.4rem;
-  left: -2.4rem;
-  min-width: 8rem;
-  min-height: 8rem;
-  background-color: red;
-  border-radius: 4rem;
+
+/* ----- LOGO ----- */
+.toggle {
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  width: auto;
+  height: auto;
+  bottom: 1.5rem;
+  left: 1.5rem;
   cursor: pointer;
 }
-.navbar #check01 {
-  display: none;
-}
-.navbar .menu {
-  list-style: none;
-  margin-right: 35vw;
-}
-.navbar .menu li {
-  margin: 2rem;
+.toggle .logo {
+  position: relative;
+  aspect-ratio: 1/1;
+  width: 12rem;
 }
 
-input,
-ul.menu {
-  display: none;
-}
-
-#check01:checked ~ ul.menu {
+/* ----- MENU ----- */
+.menu {
+  position: relative;
   display: flex;
-  animation: menuBar 5s ease forwards;
+  list-style: none;
+  white-space: nowrap;
+  padding: 3rem 2rem 3rem 8rem;
+  bottom: -1.5rem;
+  justify-content: space-around;
+  max-width: 80vw;
+  margin-left: 7rem;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease-in-out;
+}
+.menu .menuBtn {
+  font-size: 1.8rem;
+  padding: 0 2rem;
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  color: #a10a0a;
+  cursor: pointer;
+}
+
+/* ----- ANIMATIONS HOVER DISPLAY ----- */
+.toggle:hover ~ .menu {
+  opacity: 1;
+  visibility: visible;
+  animation: menuAppear 0.5s forwards;
+}
+
+.menu:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu:not(:hover) {
+  opacity: 0;
+  visibility: hidden;
+  animation: menuDisappear 1s forwards;
+}
+
+.menuBtn:hover {
+  color: #dbac11;
+  animation: BtnChange 0.5s ease-in-out forwards;
+}
+
+/* ----- DELAY ----- */
+.menuBtn:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.menuBtn:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.menuBtn:nth-child(4) {
+  transition-delay: 0.6s;
+}
+
+.menuBtn:nth-child(5) {
+  transition-delay: 0.8s;
+}
+
+.menuBtn:nth-child(6) {
+  transition-delay: 1s;
+}
+
+/* ----- ANIMATION SPAN SELECT ----- */
+span {
+  position: absolute;
+  border-radius: 8px;
+  bottom: 2.4rem;
+  left: 10rem;
+  background-color: #a10a0a;
+  width: 5rem;
+  height: 0.5rem;
+  transition: 1s ease;
+}
+
+.menuBtn:hover ~ span {
+  opacity: 1;
+  transition: 0.2s ease;
+}
+
+.menuBtn:nth-child(1):hover ~ span {
+  left: 10rem;
+}
+
+.menuBtn:nth-child(2):hover ~ span {
+  width: 6rem;
+  left: 25rem;
+}
+
+.menuBtn:nth-child(3):hover ~ span {
+  left: 40.7rem;
+  width: 6rem;
+}
+
+.menuBtn:nth-child(4):hover ~ span {
+  left: 56rem;
+  width: 7rem;
+}
+
+.menuBtn:nth-child(5):hover ~ span {
+  left: 71.5rem;
+  width: 7rem;
+}
+
+.menuBtn:nth-child(6):hover ~ span {
+  width: 7rem;
+  left: 87rem;
 }/*# sourceMappingURL=navigation.css.map */

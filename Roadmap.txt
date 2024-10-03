@@ -1,0 +1,6 @@
+NAVIGATION BAR
+--------------
+
+- span
+- logo hint?
+- Btn click anim
