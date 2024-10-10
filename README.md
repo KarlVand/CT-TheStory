@@ -46,3 +46,8 @@ I started the construction with the navigation bar component. Menu bar that will
 I initially created a Button component which would be generated and modified dynamically. This was great to learn how to integrate and display multiple iterations of one component at the same time. The reality of the project, where I actually only need these buttons in that said Navigation Component made me realise that, except the skills learning, this was useless in this project and made the code cluttered for no reason.
 
 I did create that menu appearing when the logo is hovered. I found a way to animate it completely (100%) CSS as I want to grasp all the principles of animation in CSS. Again, I'm not sure it is the most straightforward method for an animated menu, we'll see that in the future.
+
+#### Parallax animation
+
+I've been trying to do parallax effect with **Framer Motion**, kind of succeeded even if it does lag a bit on the scroll ...
+I do feel I need to practice especially on the many options and possibilities you can achieve with **Framer Motion**, I'll play around a bit before trying something more precise, like here... I might give **Tailwind** a try again.
