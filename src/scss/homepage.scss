@@ -1,0 +1,35 @@
+.bgSky {
+  width: 100vw;
+  height: 100vh;
+  img {
+    box-sizing: border-box;
+  }
+  h1 {
+    position: absolute;
+    z-index: 1;
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+  }
+}
+
+.skyline {
+  position: absolute;
+  top: 50vh;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.character {
+  position: absolute;
+  top: 50vh;
+  z-index: 2;
+  left: 50vh;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

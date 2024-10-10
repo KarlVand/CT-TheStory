@@ -182,30 +182,30 @@ span {
 }
 
 .menuBtn:nth-child(1):hover ~ span {
-  left: 10rem;
+  left: 10vw;
 }
 
 .menuBtn:nth-child(2):hover ~ span {
   width: 6rem;
-  left: 25rem;
+  left: 27vw;
 }
 
 .menuBtn:nth-child(3):hover ~ span {
-  left: 40.7rem;
+  left: 40.7vw;
   width: 6rem;
 }
 
 .menuBtn:nth-child(4):hover ~ span {
-  left: 56rem;
+  left: 56vw;
   width: 7rem;
 }
 
 .menuBtn:nth-child(5):hover ~ span {
-  left: 71.5rem;
+  left: 71vw;
   width: 7rem;
 }
 
 .menuBtn:nth-child(6):hover ~ span {
   width: 7rem;
-  left: 87rem;
+  left: 95vw;
 }/*# sourceMappingURL=navigation.css.map */

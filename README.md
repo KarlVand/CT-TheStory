@@ -44,3 +44,5 @@ I had already a global idea on the static design of the layout, which I believe 
 I started the construction with the navigation bar component. Menu bar that will be hidden and will reveal once we hover on the logo. The challenge was to understand how and where to define the different animations and effects, also how to extend the hover effect, launched when hovering the logo but it need to stay accessible once you switch and move on the menu elements.
 
 I initially created a Button component which would be generated and modified dynamically. This was great to learn how to integrate and display multiple iterations of one component at the same time. The reality of the project, where I actually only need these buttons in that said Navigation Component made me realise that, except the skills learning, this was useless in this project and made the code cluttered for no reason.
+
+I did create that menu appearing when the logo is hovered. I found a way to animate it completely (100%) CSS as I want to grasp all the principles of animation in CSS. Again, I'm not sure it is the most straightforward method for an animated menu, we'll see that in the future.

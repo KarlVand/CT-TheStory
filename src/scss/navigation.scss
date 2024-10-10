@@ -4,6 +4,7 @@
 /* ----- LAYOUT COMPONENT ----- */
 
 .navbar {
+  z-index: 100;
   width: 100vw;
   height: 10rem;
   position: fixed;
@@ -55,7 +56,7 @@
   justify-content: space-around;
   max-width: 80vw;
   margin-left: 7rem;
-  z-index: 1;
+
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.7s ease-in-out;
@@ -120,9 +121,9 @@ span {
 
   border-radius: 8px;
   bottom: 2.4rem;
-  left: 10rem;
+  left: 8vw;
   background-color: $secondary;
-  width: 5rem;
+  width: 6rem;
   height: 0.5rem;
   transition: 1s ease;
 }
@@ -132,25 +133,25 @@ span {
   transition: 0.2s ease;
 }
 .menuBtn:nth-child(1):hover ~ span {
-  left: 10rem;
+  left: 8vw;
 }
 .menuBtn:nth-child(2):hover ~ span {
-  width: 6rem;
-  left: 25rem;
+  width: 7rem;
+  left: 21vw;
 }
 .menuBtn:nth-child(3):hover ~ span {
-  left: 40.7rem;
-  width: 6rem;
+  left: 34.2vw;
+  width: 7rem;
 }
 .menuBtn:nth-child(4):hover ~ span {
-  left: 56rem;
+  left: 48vw;
   width: 7rem;
 }
 .menuBtn:nth-child(5):hover ~ span {
-  left: 71.5rem;
-  width: 7rem;
+  left: 61vw;
+  width: 8rem;
 }
 .menuBtn:nth-child(6):hover ~ span {
-  width: 7rem;
-  left: 87rem;
+  width: 8rem;
+  left: 74vw;
 }
