@@ -15,7 +15,7 @@
 
 .skyline {
   position: absolute;
-  top: 50vh;
+  top: 53vh;
   img {
     width: 100%;
     height: auto;
@@ -32,4 +32,24 @@
     width: 100%;
     height: auto;
   }
+}
+
+.about {
+  position: absolute;
+  left: 35vw;
+  top: 100vh;
+  z-index: 3;
+  width: 20vw;
+  height: 50vh;
+  background-color: rgba($color: yellow, $alpha: 0.3);
+  backdrop-filter: blur(8px);
+
+  border-radius: 35px;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: red;
+  text-align: center;
 }

@@ -11,6 +11,7 @@ const HomePage = () => {
   const skySpeed = 0.9;
   const skylineSpeed = 0.8;
   const characterSpeed = 0.1;
+  const aboutSpeed = 0.05;
 
   const ySky = useTransform(scrollY, [0, 1000], [0, 1000 * skySpeed]);
   const ySkyline = useTransform(scrollY, [0, 1000], [0, 1000 * skylineSpeed]);
@@ -19,6 +20,7 @@ const HomePage = () => {
     [0, 1000],
     [850, 1000 * characterSpeed]
   );
+  const yAbout = useTransform(scrollY, [0, 1000], [1000, 2700 * aboutSpeed]);
 
   return (
     <div className="main">
@@ -51,6 +53,14 @@ const HomePage = () => {
           src={Character}
           alt="character"
         />
+      </motion.div>
+      <motion.div
+        className="about"
+        style={{ y: yAbout }}
+        initial={{ opacity: 0, scale: 0.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 3 }}>
+        <h1>KARL.DEV</h1>
       </motion.div>
     </div>
   );
