@@ -1,52 +1,32 @@
 import styles from "../scss/gallery.module.scss";
+import Thumb from "../assets/images/galleryThumbnails/thumbExample.png";
 
 const Gallery = () => {
+  const images = [
+    { Thumb },
+    { Thumb },
+    { Thumb },
+    { Thumb },
+    { Thumb },
+    { Thumb },
+    { Thumb },
+    { Thumb },
+  ];
   return (
-    <main className="flex w-screen h-screen bg-blue-500 flex-col">
+    <main className="flex w-screen h-screen bg-blue-500 flex-col md:flex-row">
       <section className={styles.display}>image here</section>
-      <aside>
-        <section className={styles.choice}>
-          <img
-            className={styles.thumbnail}
-            src=""
-            alt="character1"
-          />
-          <img
-            className={styles.thumbnail}
-            src=""
-            alt="character2"
-          />
-          <img
-            className={styles.thumbnail}
-            src=""
-            alt="character3"
-          />
-          <img
-            className={styles.thumbnail}
-            src=""
-            alt="character4"
-          />
-          <img
-            className={styles.thumbnail}
-            src=""
-            alt="character1"
-          />
-          <img
-            className={styles.thumbnail}
-            src=""
-            alt="character2"
-          />
-          <img
-            className={styles.thumbnail}
-            src=""
-            alt="character3"
-          />
-          <img
-            className={styles.thumbnail}
-            src=""
-            alt="character4"
-          />
-        </section>
+      <aside className="flex space-x-4 p-4">
+        {images.map((src, index) => (
+          <div
+            key={index}
+            className="flex-none w-[30vw] max-w-[150px] aspect-square">
+            <img
+              src={Thumb}
+              alt={`Thumbnail ${index + 1}`}
+              className="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+        ))}
       </aside>
     </main>
   );
