@@ -1,18 +1,6 @@
-/* ----- FONTS ----- */
-@font-face {
-  font-family: "Pangolin-Regular.ttf", sans-serif;
-  src: url(../assets/fonts/Pangolin-Regular.ttf);
-  font-display: swap;
-}
-@font-face {
-  font-family: "ArchitectsDaughter-Regular.ttf", sans-serif;
-  src: url(../assets/fonts/ArchitectsDaughter-Regular.ttf);
-  font-display: swap;
-}
-/* ----- COLORS ----- */
-* {
-  font-family: "ArchitectsDaughter-Regular.ttf", sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   width: 100vw;
@@ -22,4 +10,4 @@ body {
   background-color: #dbac11;
   display: flex;
   overflow-x: hidden;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */

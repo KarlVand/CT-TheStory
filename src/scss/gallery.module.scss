@@ -1,0 +1,29 @@
+.display {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
+
+aside {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  background-color: brown;
+  & .choice {
+    display: grid;
+    grid-template-columns: repeat(8, calc(30% - 10px));
+    grid-template-rows: 1;
+  }
+}
+
+.thumbnail {
+  aspect-ratio: square;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+}

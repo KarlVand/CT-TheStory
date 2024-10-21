@@ -1,9 +1,11 @@
 import "../css/navigation.css";
 import Logo from "../assets/images/logoPlaceholder.webp";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
+  const navigate = useNavigate();
   return (
-    <div className="navbar">
+    <div className="navbar hidden md:inline-block md:fixed ">
       <button className="toggle">
         <img
           src={Logo}
@@ -13,32 +15,34 @@ const Navigation = () => {
 
       <nav className="menu">
         <a
-          href="#"
+          onClick={() => navigate("/home")}
+          href="home"
           className="menuBtn">
           Home
         </a>
+
         <a
-          href="#"
+          href="about"
           className="menuBtn">
           About
         </a>
         <a
-          href="#"
+          href="comic"
           className="menuBtn">
           Comic
         </a>
         <a
-          href="#"
+          href="runner"
           className="menuBtn">
           Runner
         </a>
         <a
-          href="#"
+          href="gallery"
           className="menuBtn">
           Gallery
         </a>
         <a
-          href="#"
+          href="credits"
           className="menuBtn">
           Credits
         </a>
