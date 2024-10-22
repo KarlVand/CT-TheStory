@@ -13,20 +13,21 @@ const Gallery = () => {
     { Thumb },
   ];
   return (
-    <main className="flex w-screen h-screen bg-blue-500 flex-col md:flex-row">
+    <main>
       <section className={styles.display}>image here</section>
-      <aside className="flex space-x-4 p-4">
-        {images.map((src, index) => (
-          <div
-            key={index}
-            className="flex-none w-[30vw] max-w-[150px] aspect-square">
-            <img
-              src={Thumb}
-              alt={`Thumbnail ${index + 1}`}
-              className="w-full h-full object-cover rounded-lg shadow-md"
-            />
-          </div>
-        ))}
+      <aside>
+        <section className={styles.choice}>
+          {images.map((src, index) => (
+            <div
+              key={index}
+              className={styles.thumbnail}>
+              <img
+                src={Thumb}
+                alt={`Thumbnail ${index + 1}`}
+              />
+            </div>
+          ))}
+        </section>
       </aside>
     </main>
   );

@@ -1,0 +1,33 @@
+/* ---------------------------------- MEDIUM SIZE ---------------------------------- */
+
+@media (orientation: landscape) and (min-width: 768px) {
+  main {
+    flex-direction: row;
+    overflow: hidden;
+  }
+  /* ----- GALLERY ----- */
+  aside {
+    grid-template-rows: 50px 1fr 50px;
+    min-width: 36vw;
+    .choice {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(8, calc(7rem + 6px));
+      height: 100vh;
+      overflow-y: hidden;
+      overflow-x: auto;
+    }
+  }
+  /* ----- IMAGE ----- */
+  .thumbnail {
+    display: inline-block;
+    margin-left: 1rem;
+    width: 7rem;
+    height: 7rem;
+    padding: 5px;
+    img {
+      object-fit: cover;
+    }
+  }
+}
+/* "md:w-[36vw] md:grid-columns-2 md:overflow-x-hidden md:overflow-y-auto" */
