@@ -13,7 +13,8 @@ const Gallery = () => {
     { Thumb },
   ];
   return (
-    <main>
+    <main className="flex w-screen h-screen flex-col md:flex-row">
+      <galleryCharacters />
       <section className={styles.display}>image here</section>
       <aside>
         <section className={styles.choice}>

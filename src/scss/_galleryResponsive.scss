@@ -1,33 +1,111 @@
-/* ---------------------------------- MEDIUM SIZE ---------------------------------- */
+/* -------------------------------------------------------- MOBILE LANDSCAPE ----- */
 
-@media (orientation: landscape) and (min-width: 768px) {
+@media (min-width: 576px) and (max-width: 860px) and (orientation: landscape) {
   main {
     flex-direction: row;
-    overflow: hidden;
   }
-  /* ----- GALLERY ----- */
+
+  .display {
+    width: 85%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: green;
+  }
+
   aside {
-    grid-template-rows: 50px 1fr 50px;
-    min-width: 36vw;
+    position: relative;
+    width: auto;
+    max-width: 15%;
+    height: 100vh;
+
+    overflow: hidden;
+
     .choice {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(8, calc(7rem + 6px));
+      grid-template-columns: 1fr;
+      grid-auto-rows: min-content;
       height: 100vh;
-      overflow-y: hidden;
-      overflow-x: auto;
+      padding-right: 2rem;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
-  /* ----- IMAGE ----- */
+
   .thumbnail {
-    display: inline-block;
-    margin-left: 1rem;
     width: 7rem;
     height: 7rem;
-    padding: 5px;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
     img {
-      object-fit: cover;
+      aspect-ratio: 1;
+      width: 100%;
+      height: auto;
     }
   }
 }
-/* "md:w-[36vw] md:grid-columns-2 md:overflow-x-hidden md:overflow-y-auto" */
+
+/* ---------------------------------------------------------- TABLET PORTRAIT ----- */
+
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+  main {
+    flex-direction: column;
+  }
+  .display {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+  }
+
+  aside {
+    position: relative;
+    display: inline-block;
+    width: auto;
+
+    .choice {
+      display: grid;
+      background-color: red;
+      grid-row: 1;
+      grid-template-columns: repeat(8, calc(30vw - 10px));
+      width: 100vw;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  }
+
+  .thumbnail {
+    display: flex;
+    width: 25vw;
+    padding: 6px;
+    margin-bottom: 5px;
+    img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 992px) and (max-width: 1199px) and (orientation: landscape) {
+  /* styles */
+}
+
+/* Laptop */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* styles */
+}
+
+/* Desktop/Large screens */
+@media (min-width: 1400px) {
+  /* styles */
+}

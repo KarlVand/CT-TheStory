@@ -15,7 +15,7 @@
 
 .skyline {
   position: absolute;
-  top: 50vh;
+  top: 53vh;
 }
 .skyline img {
   width: 100%;
@@ -25,9 +25,30 @@
 .character {
   position: absolute;
   top: 50vh;
-  z-index: 100;
+  z-index: 2;
+  left: 50vh;
 }
 .character img {
   width: 100%;
   height: auto;
+}
+
+.about {
+  position: absolute;
+  left: 35vw;
+  top: 100vh;
+  z-index: 3;
+  width: 20vw;
+  height: 50vh;
+  background-color: rgba(255, 255, 0, 0.3);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  border-radius: 35px;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: red;
+  text-align: center;
 }/*# sourceMappingURL=homepage.css.map */

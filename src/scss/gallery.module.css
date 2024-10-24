@@ -1,0 +1,149 @@
+/* Mobile portrait - Small devices */
+@media (min-width: 320px) and (max-width: 576px) and (orientation: portrait) {
+  main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+  }
+  .display {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+  }
+  /* ----- GALLERY ----- */
+  aside {
+    position: relative;
+    display: inline-block;
+    width: auto;
+  }
+  aside .choice {
+    display: grid;
+    background-color: red;
+    grid-row: 1;
+    grid-template-columns: repeat(8, calc(30vw - 10px));
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  /* ----- IMAGE ----- */
+  .thumbnail {
+    display: flex;
+    width: 30vw;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 15px;
+  }
+}
+/* -------------------------------------------------------- MOBILE LANDSCAPE ----- */
+@media (min-width: 576px) and (max-width: 860px) and (orientation: landscape) {
+  main {
+    flex-direction: row;
+  }
+  .display {
+    width: 85%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: green;
+  }
+  aside {
+    position: relative;
+    width: auto;
+    max-width: 15%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  aside .choice {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    height: 100vh;
+    padding-right: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .thumbnail {
+    width: 7rem;
+    height: 7rem;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+  }
+  .thumbnail img {
+    aspect-ratio: 1;
+    width: 100%;
+    height: auto;
+  }
+}
+/* ---------------------------------------------------------- TABLET PORTRAIT ----- */
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+  main {
+    flex-direction: column;
+  }
+  .display {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+  }
+  aside {
+    position: relative;
+    display: inline-block;
+    width: auto;
+  }
+  aside .choice {
+    display: grid;
+    background-color: red;
+    grid-row: 1;
+    grid-template-columns: repeat(8, calc(30vw - 10px));
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .thumbnail {
+    display: flex;
+    width: 25vw;
+    padding: 6px;
+    margin-bottom: 5px;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 15px;
+  }
+}
+/* Tablet landscape */
+@media (min-width: 992px) and (max-width: 1199px) and (orientation: landscape) {
+  /* styles */
+}
+/* Laptop */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* styles */
+}
+/* Desktop/Large screens */
+@media (min-width: 1400px) {
+  /* styles */
+}/*# sourceMappingURL=gallery.module.css.map */
