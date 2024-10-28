@@ -1,6 +1,6 @@
 // src/components/Users/index.jsx
 import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import { api } from "../../services/userApi";
 import UserList from "./UserList";
 import UserForm from "./UserForm";
 import styles from "./Users.module.css";

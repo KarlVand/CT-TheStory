@@ -1,0 +1,52 @@
+/* src/components/Users/Users.module.css */
+.usersContainer {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.userList {
+  margin-top: 20px;
+}
+
+.userItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 50px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.formGroup label {
+  position: relative;
+  display: block;
+  margin-bottom: 5px;
+}
+.formGroup input {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.formGroup .formGroup .error {
+  color: red;
+  padding: 10px;
+  background: #fff3f3;
+  border-radius: 4px;
+  margin: 10px 0;
+}/*# sourceMappingURL=Users.module.css.map */

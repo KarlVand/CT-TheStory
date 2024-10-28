@@ -1,13 +1,17 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../config/database.php";
+require_once "../config/headers.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
+
+error_log('Received request: ' . $_SERVER['REQUEST_METHOD']);
+error_log('Request body: ' . file_get_contents('php://input'));
  
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] === "POST"){
  
     // Validate username
     if(empty(trim($_POST["username"]))){
