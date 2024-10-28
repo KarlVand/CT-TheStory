@@ -39,7 +39,7 @@ Use proper syntax in Html, keep a logical structure and implement at its best al
 
 I had already a global idea on the static design of the layout, which I believe will be pretty simple and straightforward. I want to push the boundaries and explore the css animations and interactions.
 
-#### Navigation Component
+### Navigation Component
 
 I started the construction with the navigation bar component. Menu bar that will be hidden and will reveal once we hover on the logo. The challenge was to understand how and where to define the different animations and effects, also how to extend the hover effect, launched when hovering the logo but it need to stay accessible once you switch and move on the menu elements.
 
