@@ -18,9 +18,9 @@ switch($_SERVER['REQUEST_METHOD']) {
     case 'POST':
         try {
             $data = json_decode(file_get_contents('php://input'), true);
-            
-            $stmt = $conn->prepare("INSERT INTO users (name, email) VALUES (?, ?)");
-            $stmt->execute([$data['name'], $data['email']]);
+            $hashedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
+            $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+            $stmt->execute([$data['name'], $data['email'], $hashedPassword]);
             
             echo json_encode(['message' => 'User created successfully']);
         } catch(PDOException $e) {

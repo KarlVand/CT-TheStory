@@ -7,6 +7,7 @@ const UserForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    password: "",
   });
 
   const handleSubmit = e => {
