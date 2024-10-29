@@ -1,5 +1,4 @@
-// frontend/src/services/userApi.js
-const API_BASE_URL = "http://localhost/CT-backend/public"; // Adjust to your PHP backend URL
+const API_BASE_URL = "http://localhost/public/user";
 
 export const userApi = {
   async register(userData) {
@@ -9,10 +8,17 @@ export const userApi = {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include", // Important for CORS with cookies
         body: JSON.stringify(userData),
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       return await response.json();
     } catch (error) {
+      console.error("Registration error:", error);
       throw new Error("Registration failed: " + error.message);
     }
   },
@@ -29,15 +35,6 @@ export const userApi = {
       return await response.json();
     } catch (error) {
       throw new Error("Login failed: " + error.message);
-    }
-  },
-
-  async getUsers() {
-    try {
-      const response = await fetch(`${API_BASE_URL}/users.php`);
-      return await response.json();
-    } catch (error) {
-      throw new Error("Failed to fetch users: " + error.message);
     }
   },
 };
