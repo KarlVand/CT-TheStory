@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost/public/user";
+const API_BASE_URL = "/api";
 
 export const userApi = {
   async register(userData) {
@@ -8,33 +8,20 @@ export const userApi = {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", // Important for CORS with cookies
         body: JSON.stringify(userData),
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorData = await response.json().catch(() => null);
+        throw new Error(
+          errorData?.error || `HTTP error! status: ${response.status}`
+        );
       }
 
       return await response.json();
     } catch (error) {
       console.error("Registration error:", error);
-      throw new Error("Registration failed: " + error.message);
-    }
-  },
-
-  async login(credentials) {
-    try {
-      const response = await fetch(`${API_BASE_URL}/login.php`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-      });
-      return await response.json();
-    } catch (error) {
-      throw new Error("Login failed: " + error.message);
+      throw error;
     }
   },
 };
