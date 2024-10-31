@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { userApi } from "../../services/userApi";
 import styles from "./Users.module.scss";
+/* import axios from "axios"; */
 
 // frontend/src/components/Users/UserForm.jsx
 

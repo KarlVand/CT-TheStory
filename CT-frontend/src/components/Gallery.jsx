@@ -1,5 +1,6 @@
 import styles from "../scss/gallery.module.scss";
 import Thumb from "../assets/images/galleryThumbnails/thumbExample.png";
+import Nelson from "../assets/images/nelson01.webp";
 
 const Gallery = () => {
   const images = [
@@ -15,7 +16,12 @@ const Gallery = () => {
   return (
     <main className="flex w-screen h-screen flex-col md:flex-row">
       <galleryCharacters />
-      <section className={styles.display}>image here</section>
+      <section className={styles.display}>
+        <img
+          src={Nelson}
+          alt="nelson"
+        />
+      </section>
       <aside>
         <section className={styles.choice}>
           {images.map((src, index) => (

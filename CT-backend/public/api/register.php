@@ -1,6 +1,6 @@
 <?php
-// register.php
-require_once '../config/headers.php';  // Include this FIRST
+
+require_once '../config/headers.php';
 require_once '../config/database.php';
 
 // Get the request body
@@ -13,6 +13,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
     echo json_encode(['success' => false, 'error' => 'Invalid JSON data']);
     exit;
 }
+
 
 class RegistrationException extends Exception {}
 
