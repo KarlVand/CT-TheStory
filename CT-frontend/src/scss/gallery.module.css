@@ -1,16 +1,19 @@
 /* ----------------------------------------------------------- MOBILE PORTRAIT ----- */
 @media (min-width: 320px) and (orientation: portrait) {
   .main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 85vh, 15vh;
     width: 100vw;
     height: 100vh;
     top: 0;
+    gap: 0;
   }
   .display {
-    display: flex;
     position: relative;
+    display: flex;
+    grid-row: 1;
     flex-direction: column;
+    justify-self: start;
     overflow: hidden;
     align-items: center;
     margin: 0;
@@ -19,45 +22,72 @@
     height: 85vh;
     background-color: green;
   }
-  .display .charName {
+  .display .titleContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0 auto */
+    min-width: 70vw;
+    z-index: 1;
+  }
+  .display .titleContainer .charName {
     position: relative;
     margin-top: 3rem;
     color: white;
-    font-size: 3.5em;
+    width: 100%;
+    font-size: clamp(4rem, 2vw + 1rem, 5rem);
     white-space: nowrap;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
-  .display .displayImage {
+  .display .imgContainer {
     position: absolute;
-    width: 100%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 75vh;
     top: 6rem;
   }
-  .display .charDescription {
+  .display .imgContainer .displayImage {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .display .descriptionContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* margin: 0 auto */
+    width: 80vw;
+  }
+  .display .descriptionContainer .charDescription {
     position: relative;
     margin-bottom: 1rem;
     color: white;
     background-color: rgba(225, 225, 0, 0.3);
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
-    border-radius: 15px;
-    padding: 1rem;
+    border-radius: 15px 15px 0 0;
+    padding: 2em 2em 10em 2em;
     font-size: 0.8rem;
     margin-top: 13rem;
-    align-content: end;
     text-align: justify;
-    width: 70%;
+    width: 100%;
     height: auto;
+    z-index: 1;
   }
   /* ----- GALLERY ----- */
   aside {
     position: relative;
     display: inline-block;
-    justify-self: flex-end;
-    justify-content: end;
+    justify-self: end;
     width: auto;
-    height: 15vh;
+    padding: auto;
+    grid-row: 2;
   }
   aside .choice {
     display: grid;
@@ -70,18 +100,25 @@
     overflow-x: auto;
     overflow-y: hidden;
   }
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
   .thumbnail {
+    position: relative;
     display: flex;
-    width: 23vw;
-    max-width: 150px;
-    padding: min(0.5rem, 50px);
+    width: 24vw;
+    max-height: 12vh;
+    padding: min(0.8rem, 50px);
     margin: 0 1rem 0.5rem 0.5rem;
     margin-bottom: 5px;
+    box-sizing: content-box;
   }
   .thumbnail img {
     width: 100%;
     height: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     -o-object-fit: cover;
        object-fit: cover;
     border-radius: 15px;
@@ -134,8 +171,9 @@
   }
 }
 /* -------------------------------------------------------------- TABLET LANDSCAPE ----- */
-/* @media (min-width: 992px) and (orientation: landscape) {
-} */
+@media (min-width: 992px) and (orientation: landscape) {
+  /* styles */
+}
 /* Laptop */
 @media (min-width: 1200px) and (max-width: 1399px) {
   /* styles */

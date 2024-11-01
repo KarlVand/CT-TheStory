@@ -3,7 +3,7 @@ import "../scss/homepage.scss";
 
 import Background from "../assets/images/Skyunsplash.webp";
 import Skyline from "../assets/images/scraperunsplash.webp";
-import Character from "../assets/images/nelson01.webp";
+import Character from "../assets/images/gallery/nelson01.webp";
 
 const HomePage = () => {
   return (
