@@ -1,6 +1,11 @@
 @import "_mixins";
+@import "_variables";
 
 #root {
   @include display;
   width: 100%;
+}
+
+* {
+  font: 1rem "Oswald", sans-serif;
 }

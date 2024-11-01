@@ -14,13 +14,20 @@ const Gallery = () => {
     { Thumb },
   ];
   return (
-    <main className="flex w-screen h-screen flex-col md:flex-row">
+    <main className={styles.main}>
       <galleryCharacters />
       <section className={styles.display}>
+        <h1 className={styles.charName}>Name Title</h1>
         <img
+          className={styles.displayImage}
           src={Nelson}
           alt="nelson"
         />
+        <p className={styles.charDescription}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel est quas
+          praesentium dignissimos totam. A natus reiciendis officia esse culpa
+          molestias ex, ad dolorum assumenda, omnis eum nesciunt.
+        </p>
       </section>
       <aside>
         <section className={styles.choice}>

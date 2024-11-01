@@ -4,11 +4,12 @@
 /* ----- LAYOUT COMPONENT ----- */
 
 .navbar {
+  display: none;
   z-index: 100;
   width: 100vw;
   height: 10rem;
   position: fixed;
-  display: inline-block;
+  /* display: inline-block; */
   background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,

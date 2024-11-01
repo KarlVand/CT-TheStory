@@ -1,31 +1,66 @@
 /* ----------------------------------------------------------- MOBILE PORTRAIT ----- */
 
 @media (min-width: 320px) and (orientation: portrait) {
-  main {
+  .main {
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
-    flex-direction: column;
+    top: 0;
   }
 
   .display {
     display: flex;
     position: relative;
+    flex-direction: column;
     overflow: hidden;
-    justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 85vh;
     background-color: green;
+    .charName {
+      position: relative;
+      margin-top: 3rem;
+      color: white;
+      font-size: min(3.5em, 4.5em);
+      white-space: nowrap;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .displayImage {
+      position: absolute;
+      width: 100%;
+      justify-content: center;
+      top: 6rem;
+    }
+    .charDescription {
+      position: relative;
+      margin-bottom: 1rem;
+      color: white;
+      background-color: rgba(225, 225, 0, 0.3);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      padding: 1rem;
+
+      font-size: 0.8rem;
+      margin-top: 13rem;
+      align-content: end;
+      text-align: justify;
+      width: 70%;
+      height: auto;
+    }
   }
 
   /* ----- GALLERY ----- */
   aside {
     position: relative;
     display: inline-block;
+    justify-self: flex-end;
+    justify-content: end;
     width: auto;
+    height: 15vh;
 
     .choice {
       display: grid;
@@ -40,14 +75,12 @@
     }
   }
 
-  /* ----- IMAGE ----- */
-
   .thumbnail {
     display: flex;
-    width: 30vw;
+    width: 23vw;
     max-width: 150px;
-    padding: 10px;
-    margin: max(1vw, 5px);
+    padding: min(0.5rem, 50px);
+    margin: 0 1rem 0.5rem 0.5rem;
     margin-bottom: 5px;
     img {
       width: 100%;
@@ -55,6 +88,7 @@
       aspect-ratio: 1;
       object-fit: cover;
       border-radius: 15px;
+      margin-right: 0.5rem;
     }
   }
 }
