@@ -1,5 +1,6 @@
-/* ----------------------------------------------------------- MOBILE PORTRAIT ----- */
 @import "_mixins.scss";
+
+/* ----------------------------------------------------------- MOBILE PORTRAIT ----- */
 
 @media (min-width: 320px) and (orientation: portrait) {
   .main {
@@ -29,14 +30,12 @@
       min-width: 70vw;
       z-index: 1;
       .charName {
+        @include galleryH1;
         position: relative;
         margin-top: 3rem;
-        color: white;
+
         width: 100%;
         font-size: clamp(4rem, 2vw + 1rem, 5rem);
-        white-space: nowrap;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       }
     }
     .imgContainer {

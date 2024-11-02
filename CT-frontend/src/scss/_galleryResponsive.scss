@@ -1,16 +1,17 @@
+@import "_mixins.scss";
+
 /* -------------------------------------------------------- MOBILE LANDSCAPE ----- */
 
 @media (min-width: 576px) and (orientation: landscape) {
-  main {
-    flex-direction: row;
-  }
-
   .display {
     width: 85%;
     height: 100vh;
     margin: 0;
     padding: 0;
     background-color: green;
+    .characterName {
+      @include galleryH1;
+    }
   }
 
   aside {

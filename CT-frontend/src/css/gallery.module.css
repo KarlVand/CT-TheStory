@@ -134,7 +134,7 @@
 /* -------------------------------------------------------- MOBILE LANDSCAPE ----- */
 @media (min-width: 576px) and (orientation: landscape) {
   main {
-    flex-direction: row;
+    /* grid */
   }
   .display {
     width: 85%;

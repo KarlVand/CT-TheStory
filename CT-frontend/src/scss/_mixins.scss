@@ -5,3 +5,10 @@
   align-items: center;
   /* margin: 0 auto */
 }
+
+@mixin galleryH1 {
+  color: white;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
