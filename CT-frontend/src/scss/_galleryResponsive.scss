@@ -3,41 +3,101 @@
 /* -------------------------------------------------------- MOBILE LANDSCAPE ----- */
 
 @media (min-width: 576px) and (orientation: landscape) {
-  .display {
-    width: 85%;
+  .main {
+    display: flex;
+    width: 100vw;
     height: 100vh;
-    margin: 0;
-    padding: 0;
+    overflow: hidden;
+  }
+  .display {
+    position: relative;
+    justify-self: start;
+    display: grid;
+    grid-template-columns: 35vw 1fr 1fr;
+    grid-template-rows: 30vh 1fr 1fr;
+    width: 75vw;
+    min-width: 75vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 1em 4em;
     background-color: green;
-    .characterName {
-      @include galleryH1;
+    .titleContainer {
+      @include display;
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      z-index: 1;
+      .charName {
+        @include galleryH1;
+        font-size: 4.5rem;
+      }
+    }
+    .imgContainer {
+      position: relative;
+      grid-row: 1 / 4;
+      grid-column: 1 / 2;
+      width: 40vw;
+      margin-left: 2rem;
+      .displayImage {
+        display: block;
+        width: 70%;
+        height: auto;
+      }
+    }
+    .descriptionContainer {
+      @include display;
+      grid-column: 2 / 3;
+      grid-row: 2 / 4;
+      width: 30vw;
+      overflow: hidden;
+      background-color: rgba(225, 225, 0, 0.3);
+      backdrop-filter: blur(5px);
+      border-radius: 15px 15px 0 0;
+      color: white;
+      font-size: 1.5rem;
+      padding: 2em;
+      .charDescription {
+        position: relative;
+        margin-bottom: 1rem;
+      }
     }
   }
 
   aside {
+    display: flex;
     position: relative;
-    width: auto;
-    max-width: 25%;
+    max-width: 30vw;
+    min-width: 28vw;
     height: 100vh;
     overflow: hidden;
-
+    box-sizing: content-box;
     .choice {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr;
       grid-auto-rows: min-content;
+      min-width: 25vw;
       height: 98vh;
+      margin-right: 2rem;
       overflow-y: auto;
       overflow-x: hidden;
     }
   }
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 
   .thumbnail {
-    width: 10vw;
-    padding: min(0.5rem, 50px);
-    margin: 0.5rem 4rem 0.5rem 2rem;
+    min-width: 11vw;
+    max-width: 12vw;
+    height: auto;
+    padding: 0 1rem 0 0;
+    margin: 0 1rem;
     img {
       aspect-ratio: 1;
-      width: 100%;
+      padding: 5px;
+      width: clamp(10vw, 12vw, 15vw);
       height: auto;
       border-radius: 20px;
     }
@@ -47,7 +107,9 @@
 /* -------------------------------------------------------------- TABLET LANDSCAPE ----- */
 
 @media (min-width: 992px) and (orientation: landscape) {
-  /* styles */
+  aside {
+    max-width: 10vw;
+  }
 }
 
 /* Laptop */
