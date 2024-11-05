@@ -66,18 +66,19 @@
     display: flex;
     position: relative;
     max-width: 30vw;
-    min-width: 28vw;
+    min-width: 20vw;
     height: 100vh;
     overflow: hidden;
     box-sizing: content-box;
     .choice {
       position: relative;
+      align-items: center;
       display: grid;
       grid-template-columns: 1fr;
       grid-auto-rows: min-content;
       min-width: 25vw;
       height: 98vh;
-      margin-right: 2rem;
+      margin-right: 0.5rem;
       overflow-y: auto;
       overflow-x: hidden;
     }
@@ -110,11 +111,17 @@
   aside {
     max-width: 10vw;
   }
+  .choice {
+    max-width: 5vw;
+    margin-right: 0;
+  }
 }
 
 /* Laptop */
 @media (min-width: 1200px) and (max-width: 1399px) {
-  /* styles */
+  .choice {
+    max-width: 5vw;
+  }
 }
 
 /* Desktop/Large screens */

@@ -13,6 +13,7 @@ import Sonya from "../assets/images/gallery/nelson06.webp";
 import Nelson6 from "../assets/images/gallery/nelson07.webp";
 import Nelson7 from "../assets/images/gallery/nelson08.webp";
 
+/* ------------------------------------------------ CHARACTER DATA (hardcoded) ----------------- */
 const characterData = [
   {
     id: 1,
@@ -83,32 +84,106 @@ const characterData = [
 
 gsap.registerPlugin(useGSAP);
 
-/* --------------------------------------------------------------------- COMPONENT --------- */
-
+/* ------------------------------------------------------------------------------------------------- COMPONENT --------- */
 const Gallery = () => {
+  /* ---------------------------------------------------------------------- ANIMATION FUNCTIONS ----------------- */
+  const [selectedChar, setSelectedChar] = useState(characterData[0]);
+  const [isAppearing, setIsAppearing] = useState(false);
+
   const name = useRef();
   const description = useRef();
   const image = useRef();
-  const [selectedChar, setSelectedChar] = useState(characterData[0]);
 
-  useGSAP(() => {
-    gsap.fromTo(
-      name.current,
-      {
-        y: -100,
-        alpha: 0,
+  const handleChange = async character => {
+    if (isAppearing || character.id === selectedChar.id) return;
+
+    setIsAppearing(true);
+
+    const mainTimeline = gsap.timeline({
+      onComplete: () => {
+        setIsAppearing(false);
       },
-      { y: 0, alpha: 1, duration: 0.3 }
-    );
-    gsap.fromTo(
-      description.current,
-      {
-        y: 100,
-        alpha: 0,
-      },
-      { y: 0, alpha: 1, duration: 0.3 }
-    );
-  });
+    });
+
+    mainTimeline.add(disappearAnim());
+    mainTimeline.addCallback(() => {
+      setSelectedChar(character); // Update React state
+    });
+    mainTimeline.addPause("+=0.05"); // Small pause to let React update
+    mainTimeline.add(appearAnim());
+  };
+
+  /* --------------------------------------------------- ANIMATION APPEAR ----------------- */
+  const appearAnim = () => {
+    const timeline = gsap.timeline();
+
+    timeline
+      .fromTo(
+        name.current,
+        {
+          y: -500,
+          alpha: 0,
+        },
+        { y: 0, alpha: 1, duration: 0.3, ease: "power2.out" }
+      )
+      .fromTo(
+        description.current,
+        {
+          y: 300,
+          opacity: 0,
+        },
+        { y: 0, alpha: 1, duration: 0.3, ease: "power2.out" },
+        "-=0.1"
+      )
+      .fromTo(
+        image.current,
+        {
+          x: -900,
+          y: 300,
+          rotation: -90,
+          alpha: 0,
+        },
+        {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          alpha: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
+    return timeline;
+  };
+  /* --------------------------------------------------- ANIMATION DISAPPEAR ----------------- */
+  const disappearAnim = () => {
+    const timeline = gsap.timeline();
+    timeline
+      .to(name.current, { x: 200, alpha: 0, duration: 0.1, ease: "power2.in" })
+      .to(
+        description.current,
+        {
+          y: 500,
+          alpha: 0,
+          duration: 0.2,
+          ease: "power2.in",
+        },
+        "-=0.1"
+      )
+      .to(
+        image.current,
+        {
+          x: 900,
+          y: 900,
+          rotation: 90,
+          alpha: 0,
+          duration: 0.2,
+          ease: "power2.in",
+        },
+        "-=0.1"
+      );
+    return timeline;
+  };
 
   return (
     <main className={styles.main}>
@@ -133,18 +208,21 @@ const Gallery = () => {
           <p className={styles.charDescription}>{selectedChar.description}</p>
         </section>
       </section>
-      <aside>
+      <aside className={styles.aside}>
         <section className={styles.choice}>
           {characterData.map(character => (
             <button
               key={character.id}
-              onClick={() => setSelectedChar(character)}
+              onClick={() => handleChange(character)}
+              disabled={isAppearing}
               onKeyDown={e => {
                 if (e.key === "Enter" || e.key === " ") {
-                  setSelectedChar(character);
+                  handleChange(character);
                 }
               }}
-              className={styles.thumbnail}>
+              className={`${styles.thumbnail} ${
+                selectedChar.id === character.id ? styles.active : ""
+              }`}>
               <img
                 src={character.thumb}
                 alt={`Thumbnail ${character.id + 1}`}
