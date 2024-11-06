@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -86,45 +86,76 @@ gsap.registerPlugin(useGSAP);
 
 /* ------------------------------------------------------------------------------------------------- COMPONENT --------- */
 const Gallery = () => {
-  /* ---------------------------------------------------------------------- ANIMATION FUNCTIONS ----------------- */
   const [selectedChar, setSelectedChar] = useState(characterData[0]);
-  const [isAppearing, setIsAppearing] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  /* const [disappear, setDisappear] = useState(false); */
 
   const name = useRef();
   const description = useRef();
   const image = useRef();
 
   const handleChange = async character => {
-    if (isAppearing || character.id === selectedChar.id) return;
+    console.log("1. handleChange started", {
+      isAnimating,
+      currentChar: selectedChar.name,
+      newChar: character.name,
+    });
 
-    setIsAppearing(true);
+    if (isAnimating || character.id === selectedChar.id) {
+      console.log("Animation blocked:", {
+        isAnimating,
+        isSameChar: character.id === selectedChar.id,
+      });
+      return;
+    }
+
+    setIsAnimating(true);
+    console.log("2. Set isAnimating to true");
 
     const mainTimeline = gsap.timeline({
+      onStart: () => {
+        console.log("Main timeline started");
+      },
       onComplete: () => {
-        setIsAppearing(false);
+        console.log("Main timeline completed");
+        setIsAnimating(false);
       },
     });
 
-    mainTimeline.add(disappearAnim());
-    mainTimeline.addCallback(() => {
-      setSelectedChar(character); // Update React state
-    });
-    mainTimeline.addPause("+=0.05"); // Small pause to let React update
-    mainTimeline.add(appearAnim());
+    mainTimeline
+      .from(disappearAnim(), console.log("Disappear animation added"))
+      .call(() => {
+        console.log("About to update character state to:", character.name);
+        setSelectedChar(character);
+      })
+      .set({}, {}, "+=0.05")
+      .from(appearAnim(), ">");
+
+    console.log("Main timeline setup complete");
   };
 
-  /* --------------------------------------------------- ANIMATION APPEAR ----------------- */
   const appearAnim = () => {
-    const timeline = gsap.timeline();
+    console.log("Appear animation creating");
+    const timeline = gsap.timeline({
+      onStart: () => console.log("Appear animation starting"),
+      onComplete: () => console.log("Appear animation completed"),
+    });
 
-    timeline
+    return timeline
       .fromTo(
         name.current,
         {
           y: -500,
+          x: 0,
           alpha: 0,
         },
-        { y: 0, alpha: 1, duration: 0.3, ease: "power2.out" }
+        {
+          y: 0,
+          x: 0,
+          alpha: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        }
       )
       .fromTo(
         description.current,
@@ -132,7 +163,12 @@ const Gallery = () => {
           y: 300,
           opacity: 0,
         },
-        { y: 0, alpha: 1, duration: 0.3, ease: "power2.out" },
+        {
+          y: 0,
+          alpha: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
         "-=0.1"
       )
       .fromTo(
@@ -153,13 +189,22 @@ const Gallery = () => {
         },
         "-=0.2"
       );
-    return timeline;
   };
-  /* --------------------------------------------------- ANIMATION DISAPPEAR ----------------- */
+
   const disappearAnim = () => {
-    const timeline = gsap.timeline();
-    timeline
-      .to(name.current, { x: 200, alpha: 0, duration: 0.1, ease: "power2.in" })
+    console.log("Disappear animation creating");
+    const timeline = gsap.timeline({
+      onStart: () => console.log("Disappear animation starting"),
+      onComplete: () => console.log("Disappear animation completed"),
+    });
+
+    return timeline
+      .to(name.current, {
+        x: 200,
+        alpha: 0,
+        duration: 0.2,
+        ease: "power2.in",
+      })
       .to(
         description.current,
         {
@@ -182,8 +227,12 @@ const Gallery = () => {
         },
         "-=0.1"
       );
-    return timeline;
   };
+
+  // Log whenever selectedChar changes
+  useEffect(() => {
+    console.log("Selected character updated to:", selectedChar.name);
+  }, [selectedChar]);
 
   return (
     <main className={styles.main}>
@@ -214,12 +263,7 @@ const Gallery = () => {
             <button
               key={character.id}
               onClick={() => handleChange(character)}
-              disabled={isAppearing}
-              onKeyDown={e => {
-                if (e.key === "Enter" || e.key === " ") {
-                  handleChange(character);
-                }
-              }}
+              disabled={isAnimating}
               className={`${styles.thumbnail} ${
                 selectedChar.id === character.id ? styles.active : ""
               }`}>

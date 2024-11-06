@@ -12,5 +12,12 @@ export default defineConfig({
     build: {
       sourcemap: true,
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler", // or "modern"
+        },
+      },
+    },
   },
 });

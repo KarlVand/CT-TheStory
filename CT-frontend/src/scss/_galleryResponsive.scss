@@ -108,6 +108,9 @@
 /* -------------------------------------------------------------- TABLET LANDSCAPE ----- */
 
 @media (min-width: 992px) and (orientation: landscape) {
+  .charName {
+    font-size: 9rem;
+  }
   aside {
     max-width: 10vw;
   }
@@ -118,7 +121,7 @@
 }
 
 /* Laptop */
-@media (min-width: 1200px) and (max-width: 1399px) {
+@media (min-width: 1200px) {
   .choice {
     max-width: 5vw;
   }
