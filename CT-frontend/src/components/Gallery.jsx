@@ -100,31 +100,32 @@ const Gallery = () => {
 
     appearTimeline
       .fromTo(
+        image.current,
+        { y: 300, alpha: 0 },
+        {
+          y: 0,
+          alpha: 1,
+          duration: 0.4,
+          delay: 0.1,
+          ease: "back",
+        }
+      )
+
+      .fromTo(
         name.current,
-        { y: -500, x: 0, alpha: 0 },
-        { y: 0, x: 0, alpha: 1, duration: 0.3, ease: "power2.out" }
+        { y: -500, alpha: 0 },
+        { y: 0, alpha: 1, duration: 0.6, ease: "elastic.out" },
+        "-=0.3"
       )
       .fromTo(
         description.current,
         { y: 300, opacity: 0 },
-        { y: 0, alpha: 1, duration: 0.3, ease: "power2.out" },
-        "-=0.1"
-      )
-      .fromTo(
-        image.current,
-        { x: -900, y: 300, rotation: -90, alpha: 0 },
-        {
-          x: 0,
-          y: 0,
-          rotation: 0,
-          alpha: 1,
-          duration: 0.4,
-          ease: "power2.out",
-        },
-        "-=0.2"
+        { y: 0, alpha: 1, duration: 0.5, ease: "bounce.out" },
+        "-=0.6"
       );
-  }, [selectedChar]);
+  }, []);
 
+  /* -------------------------- HANDLE CHANGE -------------------------- */
   const handleChange = character => {
     console.log("1. handleChange started", {
       isAnimating,
@@ -133,6 +134,9 @@ const Gallery = () => {
     });
     const changeTimeline = gsap.timeline();
     console.log("disappear started");
+
+    /* ---------- DISAPPEAR ---------- */
+
     changeTimeline
       .fromTo(
         name.current,
@@ -142,39 +146,42 @@ const Gallery = () => {
           alpha: 1,
         },
         {
-          x: 200,
+          x: 300,
           alpha: 0,
           duration: 0.5,
-          ease: "power2.in",
+          delay: 0.2,
+          ease: "elastic.in",
         },
         console.log("name disappeared")
       )
+
       .fromTo(
         description.current,
         {
           y: 0,
+          x: 0,
           alpha: 1,
         },
         {
           y: 500,
+          x: 0,
           alpha: 0,
-          duration: 0.2,
-          ease: "power2.in",
-        },
-        "-=0.1"
+          duration: 0.6,
+          ease: "ease.out",
+        }
       )
       .fromTo(
         image.current,
         {
           x: 0,
           y: 0,
-          rotation: 0,
+          scale: 1,
           alpha: 1,
         },
         {
-          x: 900,
+          x: 0,
           y: 900,
-          rotation: 90,
+          scale: 0.5,
           alpha: 0,
           duration: 0.2,
           ease: "power2.in",
@@ -185,12 +192,15 @@ const Gallery = () => {
         },
         "-=0.1"
       );
+
+    /* ---------- APPEAR ---------- */
+
     changeTimeline
       .fromTo(
         name.current,
         {
-          y: -500,
-          x: 0,
+          y: 0,
+          x: -300,
           alpha: 0,
         },
         {
@@ -198,7 +208,7 @@ const Gallery = () => {
           x: 0,
           alpha: 1,
           duration: 0.3,
-          ease: "power2.out",
+          ease: "elastic.out",
         }
       )
       .fromTo(
@@ -211,27 +221,28 @@ const Gallery = () => {
           y: 0,
           alpha: 1,
           duration: 0.3,
-          ease: "power2.out",
+          ease: "back",
         },
-        "-=0.1"
+        "-=0.3"
       )
       .fromTo(
         image.current,
         {
-          x: -900,
+          x: 0,
           y: 300,
-          rotation: -90,
+          scale: 0.5,
+
           alpha: 0,
         },
         {
           x: 0,
           y: 0,
-          rotation: 0,
+          scale: 1,
           alpha: 1,
           duration: 0.4,
           ease: "power2.out",
         },
-        "-=0.2"
+        "-=0.4"
       );
   };
 
