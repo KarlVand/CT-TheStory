@@ -6,10 +6,10 @@ import styles from "../scss/gallery.module.scss";
 import Thumb from "../assets/images/gallery/thumbnails/thumbExample.png";
 import Charlie from "../assets/images/gallery/nelson01.webp";
 import Brook from "../assets/images/gallery/nelson02.webp";
-import Chef from "../assets/images/gallery/nelson03.webp";
+import Chef from "../assets/images/gallery/kevin01.webp";
 import Jeff from "../assets/images/gallery/nelson04.webp";
 import Will from "../assets/images/gallery/nelson05.webp";
-import Sonya from "../assets/images/gallery/nelson06.webp";
+import Sonya from "../assets/images/gallery/may01.webp";
 import Nelson6 from "../assets/images/gallery/nelson07.webp";
 import Nelson7 from "../assets/images/gallery/nelson08.webp";
 
