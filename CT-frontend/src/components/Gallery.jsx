@@ -94,54 +94,98 @@ const Gallery = () => {
   const description = useRef();
   const image = useRef();
 
-  const handleChange = async character => {
+  /* -------------------------- PAGE LOAD ANIMATION -------------------------- */
+  useEffect(() => {
+    const appearTimeline = gsap.timeline();
+
+    appearTimeline
+      .fromTo(
+        name.current,
+        { y: -500, x: 0, alpha: 0 },
+        { y: 0, x: 0, alpha: 1, duration: 0.3, ease: "power2.out" }
+      )
+      .fromTo(
+        description.current,
+        { y: 300, opacity: 0 },
+        { y: 0, alpha: 1, duration: 0.3, ease: "power2.out" },
+        "-=0.1"
+      )
+      .fromTo(
+        image.current,
+        { x: -900, y: 300, rotation: -90, alpha: 0 },
+        {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          alpha: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
+  }, [selectedChar]);
+
+  const handleChange = character => {
     console.log("1. handleChange started", {
       isAnimating,
       currentChar: selectedChar.name,
       newChar: character.name,
     });
-
-    if (isAnimating || character.id === selectedChar.id) {
-      console.log("Animation blocked:", {
-        isAnimating,
-        isSameChar: character.id === selectedChar.id,
-      });
-      return;
-    }
-
-    setIsAnimating(true);
-    console.log("2. Set isAnimating to true");
-
-    const mainTimeline = gsap.timeline({
-      onStart: () => {
-        console.log("Main timeline started");
-      },
-      onComplete: () => {
-        console.log("Main timeline completed");
-        setIsAnimating(false);
-      },
-    });
-
-    mainTimeline
-      .from(disappearAnim(), console.log("Disappear animation added"))
-      .call(() => {
-        console.log("About to update character state to:", character.name);
-        setSelectedChar(character);
-      })
-      .set({}, {}, "+=0.05")
-      .from(appearAnim(), ">");
-
-    console.log("Main timeline setup complete");
-  };
-
-  const appearAnim = () => {
-    console.log("Appear animation creating");
-    const timeline = gsap.timeline({
-      onStart: () => console.log("Appear animation starting"),
-      onComplete: () => console.log("Appear animation completed"),
-    });
-
-    return timeline
+    const changeTimeline = gsap.timeline();
+    console.log("disappear started");
+    changeTimeline
+      .fromTo(
+        name.current,
+        {
+          y: 0,
+          x: 0,
+          alpha: 1,
+        },
+        {
+          x: 200,
+          alpha: 0,
+          duration: 0.5,
+          ease: "power2.in",
+        },
+        console.log("name disappeared")
+      )
+      .fromTo(
+        description.current,
+        {
+          y: 0,
+          alpha: 1,
+        },
+        {
+          y: 500,
+          alpha: 0,
+          duration: 0.2,
+          ease: "power2.in",
+        },
+        "-=0.1"
+      )
+      .fromTo(
+        image.current,
+        {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          alpha: 1,
+        },
+        {
+          x: 900,
+          y: 900,
+          rotation: 90,
+          alpha: 0,
+          duration: 0.2,
+          ease: "power2.in",
+          onComplete: () => {
+            setSelectedChar(character);
+            setIsAnimating(false);
+          },
+        },
+        "-=0.1"
+      );
+    changeTimeline
       .fromTo(
         name.current,
         {
@@ -188,44 +232,6 @@ const Gallery = () => {
           ease: "power2.out",
         },
         "-=0.2"
-      );
-  };
-
-  const disappearAnim = () => {
-    console.log("Disappear animation creating");
-    const timeline = gsap.timeline({
-      onStart: () => console.log("Disappear animation starting"),
-      onComplete: () => console.log("Disappear animation completed"),
-    });
-
-    return timeline
-      .to(name.current, {
-        x: 200,
-        alpha: 0,
-        duration: 0.2,
-        ease: "power2.in",
-      })
-      .to(
-        description.current,
-        {
-          y: 500,
-          alpha: 0,
-          duration: 0.2,
-          ease: "power2.in",
-        },
-        "-=0.1"
-      )
-      .to(
-        image.current,
-        {
-          x: 900,
-          y: 900,
-          rotation: 90,
-          alpha: 0,
-          duration: 0.2,
-          ease: "power2.in",
-        },
-        "-=0.1"
       );
   };
 
