@@ -9,15 +9,15 @@ export default defineConfig({
     proxy: {
       "/api": "http://localhost:80",
     },
-    build: {
-      sourcemap: true,
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: "modern-compiler", // or "modern"
-        },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
       },
     },
+  },
+  build: {
+    sourcemap: true,
   },
 });
