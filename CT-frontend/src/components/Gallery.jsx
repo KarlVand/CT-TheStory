@@ -149,7 +149,6 @@ const Gallery = () => {
           x: 300,
           alpha: 0,
           duration: 0.5,
-          delay: 0.2,
           ease: "elastic.in",
         },
         console.log("name disappeared")
@@ -168,7 +167,8 @@ const Gallery = () => {
           alpha: 0,
           duration: 0.6,
           ease: "ease.out",
-        }
+        },
+        "-=0.6"
       )
       .fromTo(
         image.current,
@@ -178,6 +178,7 @@ const Gallery = () => {
           scale: 1,
           alpha: 1,
         },
+
         {
           x: 0,
           y: 900,
@@ -190,7 +191,7 @@ const Gallery = () => {
             setIsAnimating(false);
           },
         },
-        "-=0.1"
+        "-=0.6"
       );
 
     /* ---------- APPEAR ---------- */
