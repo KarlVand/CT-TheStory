@@ -1,8 +1,8 @@
 import "./css/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/navigation.jsx";
-import HomePage from "./components/HomePage.jsx";
-import Gallery from "./components/Gallery.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import Gallery from "./pages/Gallery.jsx";
 import UserForm from "./components/users/UserForm.jsx";
 import UserList from "./components/users/UserList.jsx";
 

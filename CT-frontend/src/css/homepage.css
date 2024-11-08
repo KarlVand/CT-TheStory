@@ -1,86 +1,101 @@
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: yellow;
+@media (min-width: 320px) and (orientation: portrait) {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .animGroup {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+  }
+  .bgSky {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0)), radial-gradient(circle, yellow, orange, red, rgb(128, 0, 60) 40%, rgb(31, 0, 31) 60%);
+    background-blend-mode: soft-light;
+    min-height: 180vh;
+    width: 100vw;
+  }
+  .bgSky h1 {
+    position: absolute;
+    text-transform: uppercase;
+    z-index: 1;
+    font-size: 4rem;
+    color: red;
+    text-align: center;
+  }
+  .skyline {
+    position: absolute;
+    top: 110vh;
+    width: 180vw;
+  }
+  .skyline img {
+    width: 100%;
+    height: auto;
+  }
+  .character {
+    position: absolute;
+    top: 120vh;
+    z-index: 2;
+    left: 50vh;
+  }
+  .character img {
+    width: 100%;
+    height: auto;
+  }
+  .about {
+    position: absolute;
+    left: 35vw;
+    top: 100vh;
+    z-index: 3;
+    width: 20vw;
+    height: 50vh;
+    background-color: rgba(255, 255, 0, 0.3);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-radius: 35px;
+    justify-content: center;
+  }
+  h1 {
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+  }
 }
-
-.animGroup {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  position: relative;
-  transform-style: preserve-3d;
+/* -------------------------------------------------------- MOBILE LANDSCAPE ----- */
+@media (min-width: 576px) and (orientation: landscape) {
+  .bgSky {
+    position: relative;
+  }
+  .skyline {
+    position: absolute;
+    left: 0;
+    top: 60vh;
+    width: 100vw;
+  }
+  .skyline img {
+    width: 100%;
+    height: auto;
+  }
 }
-
-.bgSky {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -27rem;
-  min-height: 80vh;
-  width: 180vw;
-  -o-object-fit: fill;
-  object-fit: fill;
+/* -------------------------------------------------------------- TABLET LANDSCAPE ----- */
+@media (min-width: 992px) and (orientation: landscape) {
+  /*styles*/
 }
-
-.bgSky img {
-  width: auto;
-  height: 80vh;
+/* Laptop */
+@media (min-width: 1200px) {
+  /* styles */
 }
-
-.bgSky h1 {
-  position: absolute;
-  text-transform: uppercase;
-  z-index: 1;
-  font-size: 2rem;
-  color: red;
-  text-align: center;
-}
-
-.skyline {
-  position: absolute;
-  top: 53vh;
-}
-
-.skyline img {
-  width: 100%;
-  height: auto;
-}
-
-.character {
-  position: absolute;
-  top: 50vh;
-  z-index: 2;
-  left: 50vh;
-}
-
-.character img {
-  width: 100%;
-  height: auto;
-}
-
-.about {
-  position: absolute;
-  left: 35vw;
-  top: 100vh;
-  z-index: 3;
-  width: 20vw;
-  height: 50vh;
-  background-color: rgba(255, 255, 0, 0.3);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border-radius: 35px;
-  justify-content: center;
-}
-
-h1 {
-  font-size: 2rem;
-  color: red;
-  text-align: center;
+/* Desktop/Large screens */
+@media (min-width: 1400px) {
+  /* styles */
 } 

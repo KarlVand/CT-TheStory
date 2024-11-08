@@ -1,0 +1,35 @@
+@import "_mixins.scss";
+
+/* -------------------------------------------------------- MOBILE LANDSCAPE ----- */
+
+@media (min-width: 576px) and (orientation: landscape) {
+  .bgSky {
+    position: relative;
+  }
+  .skyline {
+    position: absolute;
+    left: 0;
+    top: 60vh;
+    width: 100vw;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/* -------------------------------------------------------------- TABLET LANDSCAPE ----- */
+
+@media (min-width: 992px) and (orientation: landscape) {
+  /*styles*/
+}
+
+/* Laptop */
+@media (min-width: 1200px) {
+  /* styles */
+}
+
+/* Desktop/Large screens */
+@media (min-width: 1400px) {
+  /* styles */
+}

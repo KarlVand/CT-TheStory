@@ -217,10 +217,10 @@
     display: flex;
     position: relative;
     max-width: 30vw;
-    min-width: 20vw;
+    min-width: 30vw;
     height: 100vh;
     overflow: hidden;
-    box-sizing: content-box;
+    box-sizing: border-box;
   }
   aside .choice {
     position: relative;
@@ -260,11 +260,10 @@
     font-size: 9rem;
   }
   aside {
-    max-width: 10vw;
+    max-width: 5vw;
   }
   .choice {
     max-width: 5vw;
-    margin-right: 0;
   }
 }
 /* Laptop */

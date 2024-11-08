@@ -1,7 +1,6 @@
-import "../scss/homepage.scss";
 /* import { motion, useScroll, useTransform } from "framer-motion"; */
+import "../scss/homepage.scss";
 
-import Background from "../assets/images/Skyunsplash.webp";
 import Skyline from "../assets/images/scraperunsplash.webp";
 import Character from "../assets/images/gallery/nelson01.webp";
 
@@ -10,9 +9,6 @@ const HomePage = () => {
     <main>
       <div className="animGroup">
         <div className="bgSky">
-          <img
-            src={Background}
-            alt="sky"></img>
           <h1>Crispy Tender</h1>
         </div>
 
