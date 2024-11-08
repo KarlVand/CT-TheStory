@@ -1,92 +1,95 @@
 @import "_mixins.scss";
 
-@media (min-width: 320px) and (orientation: portrait) {
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-width: none;
-  }
-  .animGroup {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    position: relative;
-  }
+/* ----- MOBILE PORTRAIT (min-width: 320px) and (orientation: portrait) ----- */
 
-  .bgSky {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1)),
-      radial-gradient(
-        circle,
-        yellow,
-        orange,
-        red,
-        rgb(128, 0, 60) 40%,
-        rgb(31, 0, 31) 60%
-      );
-    background-blend-mode: soft-light;
-    min-height: 180vh;
-    width: 100vw;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.animGroup {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  position: relative;
+}
 
-    h1 {
-      position: absolute;
-      text-transform: uppercase;
-      z-index: 1;
-      font-size: 4rem;
-      color: red;
-      text-align: center;
-    }
-  }
-
-  .skyline {
-    position: absolute;
-    top: 110vh;
-    width: 180vw;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .character {
-    position: absolute;
-    top: 120vh;
-    z-index: 2;
-    left: 50vh;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .about {
-    position: absolute;
-    left: 35vw;
-    top: 100vh;
-    z-index: 3;
-    width: 20vw;
-    height: 50vh;
-    background-color: rgba($color: yellow, $alpha: 0.3);
-    backdrop-filter: blur(8px);
-
-    border-radius: 35px;
-    justify-content: center;
-  }
+.bgSky {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1)),
+    radial-gradient(
+      circle at center bottom,
+      yellow 0%,
+      orange 18%,
+      red,
+      rgb(128, 0, 60) 70%,
+      rgb(31, 0, 31) 90%
+    );
+  background-blend-mode: soft-light;
+  height: 100vh;
+  width: 100vw;
 
   h1 {
-    font-size: 2rem;
-    color: red;
+    position: absolute;
+    text-transform: uppercase;
+    top: 15vh;
+    z-index: 1;
+    font-size: 4rem;
+    color: darkorange;
+    text-shadow: rgb(0, 0, 0) 1px 5px 10px;
+    -webkit-text-stroke: 1px yellow;
     text-align: center;
   }
 }
 
-@import "_homepageResponsive.scss";
+.skyline {
+  position: absolute;
+  top: 65vh;
+  width: 180vw;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.character {
+  position: absolute;
+  top: 120vh;
+  z-index: 2;
+  left: 50vh;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.about {
+  position: absolute;
+  left: 35vw;
+  top: 100vh;
+  z-index: 3;
+  width: 20vw;
+  height: 50vh;
+  background-color: rgba($color: yellow, $alpha: 0.3);
+  backdrop-filter: blur(8px);
+
+  border-radius: 35px;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: red;
+  text-align: center;
+}
+
+@import "homepageResponsive.scss";

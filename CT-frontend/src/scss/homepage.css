@@ -19,23 +19,25 @@
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0)), radial-gradient(circle, yellow, orange, red, rgb(128, 0, 60) 40%, rgb(31, 0, 31) 60%);
+    align-items: start;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0)), radial-gradient(circle at center bottom, yellow 0%, orange 18%, red, rgb(128, 0, 60) 70%, rgb(31, 0, 31) 90%);
     background-blend-mode: soft-light;
-    min-height: 180vh;
+    height: 100vh;
     width: 100vw;
   }
   .bgSky h1 {
     position: absolute;
     text-transform: uppercase;
+    top: 15vh;
     z-index: 1;
     font-size: 4rem;
-    color: red;
+    color: darkorange;
+    text-shadow: rgb(0, 0, 0) 1px 5px 10px;
     text-align: center;
   }
   .skyline {
     position: absolute;
-    top: 110vh;
+    top: 65vh;
     width: 180vw;
   }
   .skyline img {
@@ -75,14 +77,41 @@
 @media (min-width: 576px) and (orientation: landscape) {
   .bgSky {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0)), radial-gradient(circle at center bottom, yellow 0%, orange 18%, red, rgb(128, 0, 60) 70%, rgb(31, 0, 31) 90%);
+    background-blend-mode: soft-light;
+    min-height: 110vh;
+    width: 100vw;
+  }
+  .bgSky h1 {
+    position: absolute;
+    text-transform: uppercase;
+    text-shadow: rgb(0, 0, 0) 1px 5px 10px;
+    top: 15vh;
+    z-index: 1;
+    font-size: 4rem;
+    color: darkorange;
+    text-align: center;
   }
   .skyline {
     position: absolute;
-    left: 0;
-    top: 60vh;
+    top: 45vh;
     width: 100vw;
   }
   .skyline img {
+    width: 100%;
+    height: auto;
+  }
+  .character {
+    position: absolute;
+    top: 120vh;
+    z-index: 2;
+    left: 50vh;
+  }
+  .character img {
     width: 100%;
     height: auto;
   }

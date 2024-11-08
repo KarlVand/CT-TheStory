@@ -4,17 +4,22 @@
 
 @media (min-width: 576px) and (orientation: landscape) {
   .bgSky {
-    position: relative;
-  }
-  .skyline {
-    position: absolute;
-    left: 0;
-    top: 60vh;
+    min-height: 110vh;
     width: 100vw;
-    img {
-      width: 100%;
-      height: auto;
+
+    h1 {
+      top: 15vh;
+      font-size: 4rem;
     }
+  }
+
+  .skyline {
+    top: 55vh;
+    width: 100vw;
+  }
+  .character {
+    top: 120vh;
+    left: 50vw;
   }
 }
 
