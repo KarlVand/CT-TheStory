@@ -26,11 +26,22 @@
 /* -------------------------------------------------------------- TABLET LANDSCAPE ----- */
 
 @media (min-width: 992px) and (orientation: landscape) {
+  .bgSky {
+    h1 {
+      top: 15vh;
+      font-size: 10rem;
+    }
+  }
+
   /*styles*/
 }
 
 /* Laptop */
 @media (min-width: 1200px) {
+  h1 {
+    top: 25vh;
+    font-size: 10rem;
+  }
   /* styles */
 }
 

@@ -13,8 +13,12 @@ main {
 .animGroup {
   display: flex;
   justify-content: center;
-  align-items: start;
-  position: relative;
+  align-items: center;
+  position: fixed;
+  border: 6px solid yellow;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
 }
 
 .bgSky {
@@ -30,7 +34,7 @@ main {
 .bgSky h1 {
   position: absolute;
   text-transform: uppercase;
-  top: 15vh;
+  top: 13vh;
   z-index: 1;
   font-size: 4rem;
   color: darkorange;
@@ -100,10 +104,18 @@ h1 {
 }
 /* -------------------------------------------------------------- TABLET LANDSCAPE ----- */
 @media (min-width: 992px) and (orientation: landscape) {
+  .bgSky h1 {
+    top: 15vh;
+    font-size: 10rem;
+  }
   /*styles*/
 }
 /* Laptop */
 @media (min-width: 1200px) {
+  h1 {
+    top: 25vh;
+    font-size: 10rem;
+  }
   /* styles */
 }
 /* Desktop/Large screens */

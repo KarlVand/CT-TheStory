@@ -15,8 +15,12 @@ main {
 .animGroup {
   display: flex;
   justify-content: center;
-  align-items: start;
-  position: relative;
+  align-items: center;
+  position: fixed;
+  border: 6px solid yellow;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
 }
 
 .bgSky {
@@ -40,7 +44,7 @@ main {
   h1 {
     position: absolute;
     text-transform: uppercase;
-    top: 15vh;
+    top: 13vh;
     z-index: 1;
     font-size: 4rem;
     color: darkorange;
