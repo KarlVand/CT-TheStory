@@ -55,7 +55,7 @@ main {
 
 .character {
   position: absolute;
-  top: 120vh;
+  top: 20vh;
   z-index: 2;
   left: 50vh;
 }

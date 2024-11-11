@@ -1,9 +1,9 @@
 import "../scss/homepage.scss";
 
 import Skyline from "../assets/images/scraperunsplash.webp";
-import Character from "../assets/images/gallery/nelson01.webp";
-import { useRef } from "react";
+import Character from "../assets/images/gallery/3_chef.webp";
 
+import { useRef } from "react";
 import gsap from "gsap/gsap-core";
 
 import { useGSAP } from "@gsap/react";
@@ -15,6 +15,7 @@ ScrollTrigger.normalizeScroll(true);
 
 const HomePage = () => {
   const logoTitle = useRef();
+  const skyline = useRef();
   /* ----- LOAD IN ----- */
 
   useGSAP(() => {
@@ -38,8 +39,9 @@ const HomePage = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: logoTitle.current,
-        start: "top 24%",
-        end: "top 4rem",
+        start: "top 30%",
+        end: "bottom top",
+
         markers: true,
         scrub: true,
       },
@@ -48,10 +50,26 @@ const HomePage = () => {
     tl.to(logoTitle.current, {
       scale: 0.25,
       opacity: 0,
-      duration: 1.5,
-      pin: true,
-      pinSpacing: true,
+      start: "top 60%",
+      scrub: true,
       ease: "none",
+    });
+    tl.fromTo(
+      skyline.current,
+      { y: 0 },
+      {
+        y: -100,
+        pin: true,
+        start: "top 60%",
+        end: "+=300",
+        scrub: true,
+      }
+    );
+    tl.to(".character", {
+      y: -2000,
+      start: "top 60%",
+      end: "top 20%",
+      scrub: true,
     });
   });
 
@@ -62,7 +80,9 @@ const HomePage = () => {
           <h1 ref={logoTitle}>Crispy Tender</h1>
         </div>
 
-        <div className="skyline">
+        <div
+          className="skyline"
+          ref={skyline}>
           <img
             src={Skyline}
             alt="scrapers"

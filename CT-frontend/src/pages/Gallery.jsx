@@ -10,7 +10,7 @@ import Chef from "../assets/images/gallery/3_chef.webp";
 import Jeff from "../assets/images/gallery/4_Jeff.webp";
 import Jimmy from "../assets/images/gallery/4_Jimmy.webp";
 import Sonya from "../assets/images/gallery/may01.webp";
-import Nelson6 from "../assets/images/gallery/nelson07.webp";
+import Nelson6 from "../assets/images/gallery/kevin01.webp";
 import Nelson7 from "../assets/images/gallery/nelson08.webp";
 
 /* ------------------------------------------------ CHARACTER DATA (hardcoded) ----------------- */
@@ -88,7 +88,6 @@ gsap.registerPlugin(useGSAP);
 const Gallery = () => {
   const [selectedChar, setSelectedChar] = useState(characterData[0]);
   const [isAnimating, setIsAnimating] = useState(false);
-  /* const [disappear, setDisappear] = useState(false); */
 
   const name = useRef();
   const description = useRef();
