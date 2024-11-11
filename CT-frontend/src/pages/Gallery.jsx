@@ -5,10 +5,10 @@ import { useGSAP } from "@gsap/react";
 import styles from "../scss/gallery.module.scss";
 import Thumb from "../assets/images/gallery/thumbnails/thumbExample.png";
 import Charlie from "../assets/images/gallery/nelson01.webp";
-import Brook from "../assets/images/gallery/nelson02.webp";
-import Chef from "../assets/images/gallery/kevin01.webp";
-import Jeff from "../assets/images/gallery/nelson04.webp";
-import Will from "../assets/images/gallery/nelson05.webp";
+import Brook from "../assets/images/gallery/2_Benny.webp";
+import Chef from "../assets/images/gallery/3_chef.webp";
+import Jeff from "../assets/images/gallery/4_Jeff.webp";
+import Jimmy from "../assets/images/gallery/4_Jimmy.webp";
 import Sonya from "../assets/images/gallery/may01.webp";
 import Nelson6 from "../assets/images/gallery/nelson07.webp";
 import Nelson7 from "../assets/images/gallery/nelson08.webp";
@@ -50,9 +50,9 @@ const characterData = [
   },
   {
     id: 5,
-    name: "Will",
+    name: "Jimmy",
     thumb: Thumb,
-    image: Will,
+    image: Jimmy,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel est quas praesentium dignissimos totam. A natus reiciendis officia esse culpa molestias ex, ad dolorum assumenda, omnis eum nesciunt.",
   },
